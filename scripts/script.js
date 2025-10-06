@@ -359,7 +359,8 @@ function usarDica(){
     if ( gameGrid.children.length == gameGrid.querySelectorAll(".letra").length ){
         onGameWin();
     }
-
+    
+    salvarJogo();
 
 }
 
