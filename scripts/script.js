@@ -881,6 +881,50 @@ function toggleTelaConquistas( isOpen = true ){
 
 
 
+function contarLetras(palavra = 'TESTE', letra = 'T'){
+    let counter = 0;
+    
+    for (let i = 0; i < palavra.length; i++){
+        if ( palavra[i] == letra ){
+            counter++;
+        }
+    }
+    
+    return counter;
+}
+
+
+function getTeclas( palavras = [] ){
+    
+    const LETRAS = {};
+    let teclas = '';
+    
+    palavras.forEach((palavra, indexPalavra) => {
+        
+        for (let i = 0; i < palavra.length; i++){
+            const LETRA = palavra[i];
+            const QUANTIDADE = contarLetras(palavra, LETRA);
+            
+            if ( LETRAS[LETRA] == null ){
+                LETRAS[LETRA] = QUANTIDADE;
+                continue;
+            }
+            
+            LETRAS[LETRA] = Math.max(LETRAS[LETRA], QUANTIDADE);
+        }
+        
+        
+    });
+    
+    Object.keys(LETRAS)
+        .forEach(e => 
+            teclas += e.repeat(LETRAS[e])
+        );
+    
+    return teclas;
+    
+}
+
 
 
 
@@ -959,14 +1003,16 @@ function gerarFase( indexFase = 0 ){
     entradaTeclas.innerHTML = "";
     listaTeclas.innerHTML = "";
 
-    if ( FASE_OBJ.teclas.length <= 5 ){
+    const TECLAS = getTeclas(FASE_OBJ.palavras.map(e => e.texto).concat(JOGO.dicionarioFase));
+
+    if ( TECLAS.length <= 5 ){
         listaTeclas.style.width = (32 * 4) + 'px';
     }else{
         listaTeclas.style.width = (32 * 5) + 'px';
     }
 
     
-    FASE_OBJ.teclas.forEach((tecla, teclaIndex) => {
+    TECLAS.split('').forEach((tecla, teclaIndex) => {
         const teclaElemento = document.createElement("div");
         teclaElemento.classList.add("tecla");
         teclaElemento.setAttribute("index", teclaIndex);
