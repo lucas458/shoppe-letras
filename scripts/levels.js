@@ -5,7 +5,7 @@ const FASES = [
 
     // {
     //     dicionario: [],
-    //     teclas: [],
+    //  
     //     palavras: [
     //         {texto: "ALGO", vertical: false, pos: [0, 0]},
     //     ]
@@ -14,7 +14,6 @@ const FASES = [
 
     {
         dicionario: ["AVE", "AVES", "LAVE"],
-        teclas: ["L", "A", "E", "S", "V"],
         palavras: [
             {texto: "ELA", vertical: false, pos: [4, 1]},
             {texto: "LEVA", vertical: false, pos: [1, 3]},
@@ -28,7 +27,6 @@ const FASES = [
 
     {
         dicionario: [],
-        teclas: ["S", "P", "A", "S", "O"],
         palavras: [
             {texto: "SAO", vertical: false, pos: [0, 0]},
             {texto: "SOPA", vertical: false, pos: [1, 3]},
@@ -41,7 +39,6 @@ const FASES = [
 
     {
         dicionario: ["NETA", "RETA", "TRENA", "RENTE", "TER", "ATER", "TERNA", "RENA"],
-        teclas: ["N", "E", "E", "R", "T", "A"],
         palavras: [
             {texto: "ENTRE", vertical: false, pos: [0, 2]},
             {texto: "ANTE", vertical: false, pos: [2, 4]},
@@ -57,7 +54,6 @@ const FASES = [
     
     {
         dicionario: ["NOTE"],
-        teclas: ["N", "D", "E", "E", "T", "O"],
         palavras: [
             {texto: "ONDE", vertical: false, pos: [0, 1]},
             {texto: "NETO", vertical: false, pos: [2, 3]},
@@ -70,7 +66,6 @@ const FASES = [
     
     {
         dicionario: ["SOU"],
-        teclas: ["S", "C", "R", "O", "U"],
         palavras: [
             {texto: "SUCO", vertical: false, pos: [4, 0]},
             {texto: "CURSO", vertical: false, pos: [0, 2]},
@@ -84,7 +79,6 @@ const FASES = [
     
     {
         dicionario: ["SACO", "COA", "SOA", "CALO", "ALO"],
-        teclas: ["S", "C", "A", "L", "O"],
         palavras: [
             {texto: "CALOS", vertical: false, pos: [0, 1]},
             {texto: "SAL", vertical: false, pos: [5, 2]},
@@ -100,7 +94,6 @@ const FASES = [
 
     {
         dicionario: [],
-        teclas: ["N", "A", "E", "T", "M"],
         palavras: [
             {texto: "MENTA", vertical: false, pos: [3, 0]},
             {texto: "TEMA", vertical: false, pos: [0, 1]},
@@ -116,7 +109,6 @@ const FASES = [
 
     {
         dicionario: [],
-        teclas: ["B", "A", "O", "N", "E", "Ç"],
         palavras: [
             {texto: "BENÇAO", vertical: false, pos: [1, 0]},
             {texto: "ANO", vertical: false, pos: [1, 2]},
@@ -130,7 +122,6 @@ const FASES = [
     
     {
         dicionario: ["AMO", "EMA", "EMO", "GOMA", "GAMO", "GAME"],
-        teclas: ["O", "E", "G", "M", "A"],
         palavras: [
             {texto: "OMEGA", vertical: false, pos: [0, 1]},
             {texto: "AGEM", vertical: false, pos: [2, 3]},
@@ -145,7 +136,6 @@ const FASES = [
     
     {
         dicionario: ["OVO"],
-        teclas: ["L", "O", "U", "V", "R", "O"],
         palavras: [
             {texto: "OURO", vertical: false, pos: [1, 1]},
             {texto: "LOURO", vertical: false, pos: [0, 3]},
@@ -159,7 +149,6 @@ const FASES = [
 
     {
         dicionario: ["GIRO", "TIO", "TRIO", "GRIO"],
-        teclas: ["T", "R", "G", "O", "I"],
         palavras: [
             {texto: "RITO", vertical: false, pos: [0, 2]},
             {texto: "TRIGO", vertical: false, pos: [1, 4]},
@@ -173,7 +162,6 @@ const FASES = [
     
     {
         dicionario: ["AMO", "OCA", "CAI", "IÇA", "COMIA"],
-        teclas: ["C", "A", "M", "Ç", "O", "I"],
         palavras: [
             {texto: "MACIO", vertical: false, pos: [0, 6]},
             {texto: "COMA", vertical: false, pos: [0, 4]},
@@ -189,7 +177,6 @@ const FASES = [
 
     {
         dicionario: ["DOM"],
-        teclas: ["M", "D", "A", "G", "O"],
         palavras: [
             {texto: "MODA", vertical: false, pos: [0, 3]},
             {texto: "GOMA", vertical: false, pos: [3, 2]},
@@ -204,7 +191,6 @@ const FASES = [
 
     {
         dicionario: ["EITA", "ITA"],
-        teclas: ["E", "A", "I", "N", "T"],
         palavras: [
             {texto: "ATE", vertical: true, pos: [0, 1]},
             {texto: "TIA", vertical: false, pos: [0, 2]},
@@ -218,7 +204,6 @@ const FASES = [
 
     {
         dicionario: [],
-        teclas: ["M", "L", "O", "O", "B"],
         palavras: [
             {texto: "BOM", vertical: true, pos: [0, 0]},
             {texto: "BOLO", vertical: false, pos: [0, 0]},
