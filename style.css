@@ -1,0 +1,1393 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow: hidden;
+    overscroll-behavior: none;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: #38a96b;
+    color: #fff;
+    user-select: none; 
+}
+
+
+/* NAO USADO */
+@keyframes shake {
+    0% {
+        margin-left: 0rem;
+    }
+    25% {
+        margin-left: 0.5rem;
+    }
+    75% {
+        margin-left: -0.5rem;
+    }
+    100% {
+        margin-left: 0rem;
+    }
+}
+
+
+.shakeEntrada{
+    animation: shake 0.2s ease-in-out 0s 2;
+}
+
+
+
+
+
+
+
+
+.screen{
+    width: 100%;
+    height: 100%;
+    background-color: #38a96b;
+    display: flex;
+    flex-direction: column;
+    transition: 200ms;
+    overflow: hidden;
+    position: fixed;
+    left: 100%;
+}
+
+.screenOpen{
+    left: 0px;
+}
+
+
+.screen_header{
+    width: 100%;
+    height: 56px;
+    box-shadow: 0 0 5px 0 #000;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+}
+.screen_header_label{
+    margin-left: 8px;
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+.botaoVoltar{
+    width: 32px;
+    height: 32px;
+    background-color: #fff;
+    border: 3px solid #f7cc64;
+    color: #af7221;
+    border-radius: 50%;
+    font-size: 1.2em; 
+    line-height: 23px;
+    display: flex;
+    justify-content: center;
+    transition: 100ms;
+}
+
+.botaoVoltar:active{
+    transition: 50ms;
+    transform: scale(0.9);
+}
+
+
+
+
+
+
+
+.screen_content{
+    flex: 1;
+    overflow: hidden auto;
+}
+
+.screen_footer{
+    height: 56px; 
+    box-shadow: 0 0 5px 0 #000;
+}
+
+
+
+
+
+
+
+/******* TELA: MENU *******/
+#menu_screen .screen_header{
+    justify-content: flex-end;
+    box-shadow: none;
+}
+
+#configBotaoContainer{
+    position: relative; 
+}
+
+#configBotaoMestre{
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+    background-color: #38a96b;
+    transition: 100ms;
+    border-radius: 50%;
+}
+
+
+#configLista{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+    margin: auto;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    right: 0;
+}
+
+.configBotao{
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    color: #d68a36;
+    border-radius: 50%;
+    transition: 200ms;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #97571a;
+}
+
+.configBotao:not(.configBotaoAtivo){
+    opacity: 0.5;
+}
+
+.configBotao:nth-child(1){
+    transform: translateY(-44px);
+}
+.configBotao:nth-child(2){
+    transform: translateY(-76px);
+}
+.configBotao:nth-child(3){
+    transform: translateY(-108px);
+}
+
+
+.configBotaoContainerOpen .configBotao{
+    transform: translateY(0px);
+}
+
+.configBotaoContainerOpen #configBotaoMestre{
+    transform: rotate(45deg);
+}
+
+
+
+
+
+
+#menu_screen .screen_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#menuPlay{
+    width: 64px;
+    height: 64px;
+}
+
+.menuMiniBotao{
+    width: 32px;
+    height: 32px;
+}
+
+.menuMediodBotao{
+    width: 40px;
+    height: 40px;
+    margin-top: 16px;
+}
+
+#menuPlay,
+.menuMiniBotao,
+.menuMediodBotao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 3px solid #97571a;
+    color: #d68a36;
+    background-color: #fff;
+    border-radius: 8px;
+    transition: 200ms;
+}
+
+#menuPlay:active,
+.menuMiniBotao:active,
+.menuMediodBotao:active{
+    transform: translateY(3px);
+    border-width: 0px;
+    transition: 100ms;
+}
+
+#menuMiniBotoes{
+    margin-top: 16px;
+    display: flex;
+    gap: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/******* TELA: CONQUISTAS *******/
+#conquistas_screen .screen_content{
+    padding: 16px;
+}
+
+.conquista{
+    padding: 8px;
+    background-color: #ffeeda;
+    color: #d68a36;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border-bottom: 4px solid #97571a;
+
+}
+.conquista:last-child{
+    margin: 0;
+}
+
+
+.conquistaBloqueada{
+    opacity: 0.5;
+}
+
+.conquistaTitle{
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.conquistaSubtitle{
+    font-size: 0.8em;
+    color: #853b00;
+}
+
+.conquistaProgress{
+    width: 100%;
+    height: 20px;
+    background-color: #af6027;
+    border-radius: 25px;
+    overflow: hidden;
+    margin-top: 10px;
+    padding: 4px;
+    position: relative;
+}
+
+.conquistaProgressFillContainer{
+    height: 100%;
+    width: 100%; 
+    border-radius: 25px;
+    overflow: hidden; 
+}
+
+.conquistaProgressFill{
+    background-color: #ed9c0d;
+    height: 100%;
+    width: 100%; 
+    border-radius: 25px;
+    transform: translateX(-75%);
+}
+
+.conquistaProgressLabel{
+    width: 100%;
+    /* margin: auto; */
+    font-size: 0.8em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 20px;
+
+    text-align: center;
+    position: absolute;
+    top: 0;
+    /* left: 0; */
+    /* right: 0; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/******* TELA: LOJA *******/
+#loja_screen .screen_header,
+#loja_screen .screen_footer{
+    background-color: #af6027;
+}
+
+
+
+
+#lojaMoedas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    font-size: 0.8em;
+    background-color: #fff;
+    color: #af6027;
+    border-radius: 16px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: fit-content;
+    margin: auto;
+    top: 56px;
+    transform: translateY(-50%);
+    gap: 8px;
+}
+
+#lojaMoedasIcone{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+#lojaMoedasIcone svg{
+    color: #ffc107;
+    background-color: #775b09;
+    border-radius: 50%;
+}
+
+#lojaMoedasQuantidade{
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+
+
+
+#loja_screen .screen_content{
+    background-color: #facb79;
+    padding: 16px;
+    padding-top: 32px;
+}
+
+
+
+.lojaCategoria{
+    margin-bottom: 48px; 
+}
+
+.lojaCategoria:last-child{
+    margin-bottom: 0;
+}
+
+
+.lojaCategoriaHeader{
+    padding: 8px;
+    background-color: #ea9d2b;
+    /* font-size: 1.2em; */
+    font-weight: 500;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lojaCategoriaHeaderIcone{
+    width: 32px;
+    height: 32px;
+    /* background-color: green; */
+    margin-right: 8px;
+}
+
+.lojaCategoriaHeaderLabel{
+    flex: 1;
+    text-shadow: 0 0 2px #db5a0b, 1px 1px 2px #db5a0b, -1px -1px 2px #db5a0b,  1px -1px 2px #db5a0b,  -1px 1px 2px #db5a0b;
+}
+
+.lojaCategoriaHeaderDesc{
+    text-shadow: 0 0 1px #000, 1px 1px 1px #000, -1px -1px 1px #000,  1px -1px 1px #000,  -1px 1px 1px #000;
+}
+
+
+
+.lojaCategoriaListaItens{
+    margin-top: 16px;
+    gap: 16px; 
+    overflow: auto hidden;
+    /* display: grid; */
+    /* grid-template-columns: repeat(3, 1fr); */
+    display: flex;
+}
+
+.lojaCategoriaItem{
+    min-width: 120px;
+    min-width: calc(100% / 2);
+    background-color: #fdebb9;
+    padding: 8px;
+    border: 4px solid #ea9d2b;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+
+.lojaCategoriaBadge{
+    font-size: 0.6em;
+    padding: 7px 8px;
+    background-color: #ef3236;
+    border-radius: 25px;
+    position: absolute;
+    right: -7px;
+    top: -4px;
+}
+
+.lojaCategoriaItemIcone{
+    width: 48px;
+    height: 48px;
+    /* background-color: rebeccapurple; */
+}
+
+.lojaCategoriaHeaderIcone,
+.lojaCategoriaItemIcone{
+    color: #775b09;
+}        
+
+
+
+.lojaCategoriaItemQuantidade{
+    font-size: 2em;
+    font-weight: 500;
+    margin: 16px 0;
+    text-shadow: 0 0 3px #af6027, 1px 1px 3px #af6027, -1px -1px 3px #af6027,  1px -1px 3px #af6027,  -1px 1px 3px #af6027;
+}
+
+
+.lojaCategoriaItemBotaoContainer{
+    width: 100%;
+    background: linear-gradient(#ed9c0d, #f15628);
+    border-bottom: 3px solid #c23612;
+    border-radius: 10px;
+    padding: 8px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    transition: 200ms;
+}
+
+.lojaCategoriaItemBotaoContainer:active{
+    transition: 100ms;
+    transform: translateY(2px);
+    /* border-color: transparent; */
+}
+
+.lojaCategoriaItemBotaoIcone{
+    width: 24px;
+    height: 24px;
+    box-shadow: 0 0 3px 0 #000;
+    border-radius: 50%;
+    color: #ffc107;
+    background-color: #775b09;
+    flex-shrink: 0;
+}
+
+.lojaCategoriaItemBotaoValor{
+    width: 100%;
+    font-weight: 500;
+    text-align: center;
+}
+
+.lojaCategoriaItemBotaoValor > span{
+    padding: 0 8px;
+}
+
+.lojaCategoriaItemBotaoValor > span {
+    color: #fff;
+}
+
+.lojaCategoriaItemBotaoValor > span:not(:only-child):first-child{
+    text-decoration: line-through;
+    color: #8b3800;
+}
+
+
+
+
+
+
+
+
+/******* TELA: FASES *******/
+#faseLista{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    padding: 16px;
+    row-gap: 32px;
+}
+
+
+.fase{
+    width: 96px;
+    height: 96px;
+    background-color: #fff;
+    color: #af7221;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 4px solid #a25b23;
+    transition: 200ms; 
+}
+
+
+.faseBloqueada::after{
+    content: attr(fase);
+    color: #fff;
+    font-weight: 500;
+    position: absolute;
+    top: 45px;
+}
+
+
+.faseBloqueada{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.5;
+}
+
+
+.fase:not(.faseBloqueada):active{
+    transition: 100ms;
+    border-width: 0px;
+    transform: translateY(2px);
+}
+
+
+.faseDicionario{
+    width: 30px;
+    height: 24px;
+    border-radius: 0 0 8px 0;
+    background-color: #f7cc64;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+}
+
+.faseNumero{
+    font-size: 1.5em;
+    font-weight: 500;
+    padding-top: 24px;
+    letter-spacing: 2px;
+}
+
+
+.faseTempo{
+    letter-spacing: 2px;
+    background-color: #f7cc64;
+    width: 100%;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/******* TELA: PALAVRAS DESCOBERTAS *******/
+.letraPalavra{
+    font-size: 1.5em;
+    padding-left: 8px;
+    background-color: #28a745;
+    position: sticky;
+    top: 0;
+}
+
+/* .listaPalavras{ 
+} */
+
+.palavra{
+    padding: 4px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+#palavras_screen .screen_footer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.chip{
+    height: 32px;
+    width: fit-content;
+    border-radius: 25px;
+    padding: 0 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #07612e;
+    color: #3aaf6f;
+}
+
+.chipSelecionado{
+    background-color: #fff;
+    color: #d68a36;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/******* TELA: JOGO *******/
+#game_screen{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+}
+
+
+
+
+
+/* GAME HEADER */
+#game_header{
+    width: 100%;
+}
+
+
+#game_headerTop{
+    height: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 10px;
+}
+
+
+
+#faseAtual,
+#moedas{
+    height: 24px;
+    background-color: #00000080;
+    font-weight: bold;
+    padding: 0 12px;
+    border-radius: 25px;
+}
+
+
+#faseAtual{
+    width: fit-content;
+    margin: auto;
+    line-height: 25px;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+#moedas{ 
+    width: 86px;
+    padding: 0 10px 0 2px;
+    line-height: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: right;
+}
+
+#moedaIcone{
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    color: #ffc107;
+}
+
+
+
+
+
+
+#game_headerBottom{
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
+
+
+
+#dicionarioPalavra{ 
+    height: 24px;
+    font-weight: bold;
+    background-color: #fff;
+    color: #0a0a0a;
+    padding: 0 8px;
+    border-radius: 4px;
+    margin: auto;
+    transform: translateX( calc(100% + 8px) );
+    transition: 200ms;
+    display: flex; 
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 54px;
+
+    
+}
+
+#dicionarioPalavra::after{
+    content: '';
+    display: block;
+    height: fit-content;
+    border: 6px solid transparent;
+    border-left-color: #fff;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 100%;
+}
+
+.dicionarioPalavraVisivel{
+    transform: translateX(0px) !important;
+}
+
+
+
+
+
+#dicionarioIcone{
+    width: 48px;
+    height: 56px;
+    background-color: #fff;
+    border-radius: 6px 0 0 6px;
+    padding: 4px; 
+    position: relative;
+}
+
+#dicionarioIcone > div{
+    width: 100%;
+    height: 100%;
+    background-color: #dc8c47;
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+}
+
+#dicionarioIcone > div > div:first-child{
+    width: 8px;
+    height: 100%;
+    background-color: #a95d20;
+}
+
+#dicionarioIcone > div > div:nth-child(2){
+    width: 32px;
+    height: 37px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#dicionarioIcone > div > div:last-child{
+    width: 38px;
+    height: 8px;
+    background-color: #fff;
+    border-radius: 6px 0 0 6px;
+    position: absolute;
+    bottom: 3px;
+    right: -1px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* GAME CONTENT */
+#game_content{
+    width: 100%;
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#gameArea{
+    width: 100%;
+    height: 100%;
+    background-color: #f0b74e;
+    border-radius: 16px;
+    border: 4px solid #34b22f;
+    box-shadow: inset 0 0 10px 0 #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#gameGrid{
+    display: grid;
+    grid-template-columns: repeat(7, 24px);
+    grid-template-rows: repeat(5, 24px);
+    gap: 8px;
+}
+
+
+.letraSlot{
+    width: 24px;
+    height: 24px;
+    background-color: #d68a36;
+    border-radius: 6px;
+}
+
+.letraSlotDica div{
+    color: rebeccapurple !important;
+}
+
+
+
+.letra{
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    color: #d68a36;
+    border-bottom: 2px solid #97571a;
+    border-radius: 6px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+/* GAME FOOTER */
+#game_footer{ 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 8px;
+}
+
+#entrada{
+    overflow: hidden;
+    margin-bottom: 6px;
+    gap: 2px;
+    border: 2px solid #d68a36;
+    background-color: #d68a36;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#entradaLeft{
+    background-color: #624734;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 0 16px 0 4px;
+    gap: 16px;
+}
+
+
+#entradaReset{
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    color: #d68a36;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: 200ms;
+    box-shadow: 0 0 5px 0 #000;
+    transform: rotate(-135deg);
+}
+
+#entradaReset:not(.entradaResetBloqueada):active{
+    transform: scale(1.1) rotate(-225deg);
+}
+
+
+
+#entradaTeclas{
+    min-width: 190px;
+    display: flex;
+    gap: 3px;
+}
+
+.entradaTecla{
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    color: #d68a36;
+    border-bottom: 2px solid #97571a;
+    border-radius: 6px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;             
+}
+
+
+
+#entradaEnviar{
+    height: 32px;
+    background-color: #28a745;
+    border-radius: 6px;
+    padding: 0 6px;
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+#game_footerControles{
+    width: 100%;
+    display: flex;
+    justify-content: space-between; 
+    padding: 0 16px;
+}
+
+
+.game_footerControle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.game_footerControleBotao{
+    width: 32px;
+    height: 32px;
+    background-color: #fff;
+    border: 3px solid #f7cc64;
+    color: #af7221;
+    border-radius: 50%;
+    font-size: 1.2em;
+    line-height: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 100ms;
+    position: relative;
+}
+.game_footerControleBotao:first-child{
+    margin-bottom: 6px;
+}
+
+.game_footerControleBotao:active{
+    transition: 50ms;
+    transform: scale(0.9);
+}
+
+
+.game_footerControleBotaoBadge{
+    height: 16px;
+    padding: 2px 6px;
+    display: flex;
+    font-size: 0.5em;
+    background-color: #ef3236;
+    color: #fff;
+    position: absolute;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+    left: 20px;
+    top: -6px;
+}
+
+
+
+
+#listaTeclas{
+    width: calc(32px * 4);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+
+.tecla{
+    width: 32px;
+    height: 32px;
+    background-color: #fff;
+    border-bottom: 2px solid #97571a;
+    border-radius: 6px;
+    color: #d68a36;
+    font-weight: bold;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 200ms transform;
+}
+
+.tecla:active{
+    border-bottom-width: 0px;
+    transform: translateY(2px);
+}
+
+.teclaSelecionada{
+    opacity: 0.5;
+    transform: scale(0.9);
+    border-bottom-width: 0px;
+}
+
+
+.entradaEnviarBloqueada,
+.entradaResetBloqueada{
+    opacity: 0.5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/****** TELA: DICIONARIO *******/
+#dicionario_screen{
+    width: 100%;
+    height: 100%;
+    background-color: #000000cc;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+}
+
+
+#dicionario_screen:not(.dicionario_screenOpen){
+    display: none;
+}
+
+
+
+
+#dicionarioContainer{
+    width: 320px;
+    height: 480px;
+    font-weight: bold;
+    background-color: #a25b23;
+    color: #a25b23;
+    padding: 16px;
+    padding-left: 0;
+    border-radius: 24px;
+}
+
+#dicionarioWrapper{
+    background-color: #e6a998;
+    border-radius: 8px;
+    padding: 0 10px 10px 0;
+    height: 100%;
+}
+
+
+#dicionarioContent{
+    background-color: #ffeeda;
+    padding: 24px 8px 8px 16px;
+    border-radius: 8px;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
+#dicionarioHeader{
+    text-align: center;
+    padding: 4px;
+    border: 1px solid #e6a99880;
+}
+
+
+#dicionarioHeaderTitle{
+    font-size: 1.5em;
+}
+
+#dicionarioHeaderDashed{
+    border: 2px dashed transparent;
+    border-top-color: #9e9e9e; 
+}
+
+
+
+
+
+#dicionarioLista{
+    height: 226px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 0 8px;
+}
+
+.dicionarioListaGrupo{
+    width: 100%;
+}
+
+.dicionarioItem{
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+.dicionarioItem::first-letter{
+    margin-right: 4px;
+}
+
+
+
+
+
+
+
+#dicionarioPagina{
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dicionarioPaginaBotao{
+    width: 20px;
+    height: 20px; 
+    border-radius: 8px;
+    color: #a25b23;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dicionarioPaginaBotao:active{
+    background-color: #e6a998;
+    color: #ffeeda;
+}
+
+#dicionarioPaginaValor{
+    width: 110px;
+    text-align: center;
+}
+
+
+
+
+
+#fecharDicionario{
+    height: 32px;
+    margin-top: 16px;
+    font-weight: bold;
+    font-size: 1.2em;
+    line-height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+/****** TELA: POPUP FIM DE FASE ******/
+#popupFase_screen{
+    width: 100%;
+    height: 100%;
+    background-color: #000000cc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    position: fixed;
+
+    display: none;
+}
+
+
+#popupFase_container{
+    width: 320px;
+    height: 180px;
+    overflow: hidden;
+    background-color: #ffeeda;
+    color: #fff;
+    border-radius: 16px;
+    font-weight: bold;
+    transition: 200ms;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 5px 0 #000;
+
+    transform: scale(0);
+}
+
+
+#popupFase_header{
+    font-size: 2em;
+    text-align: center;
+    background-color: #fcc31c; 
+    text-shadow: 0 0 2px #000;
+}
+
+
+#popupFase_content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 0 0 16px 16px;
+    padding: 16px 16px;
+    border: 5px solid #a25b23;
+    border-top: none;
+}
+
+#popupFase_nivel{
+    color: #a25b23;
+    text-align: center;
+    font-weight: 500;
+}
+
+
+#popupFase_controles{
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+
+.popupFase_botao:first-child{
+    width: 48px;
+    padding: 8px 32px;
+    background: linear-gradient(#f9c572, #b0742e);
+    border-bottom: 4px solid #7b4e25;
+}
+
+.popupFase_botao{
+    padding: 8px 16px;
+    height: 48px;
+    background: linear-gradient(#fcb040, #cb6f1a);
+    width: 100%;
+    white-space: nowrap;
+    border-radius: 10px;
+    border-bottom: 4px solid #ad5b11;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 200ms;
+}
+
+
+.popupFase_botao:active{
+    border-width: 0px;
+    transition: 100ms;
+}
+
+.popupFase_botao svg{
+    flex-shrink: 0;
+}
